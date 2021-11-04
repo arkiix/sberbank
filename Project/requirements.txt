@@ -1,0 +1,3 @@
+pip install python-daemon
+pip install pyodbc
+pip install pandas
