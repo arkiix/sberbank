@@ -1,6 +1,6 @@
 # Параметры подключения к БД
 DATABASE = 'template1'
-HOSTNAME = '192.168.197.229'
+HOSTNAME = '192.168.47.230'
 PORT = '5432'
 UID = 'user1'
 PWD = '123qwe'
@@ -9,7 +9,7 @@ PWD = '123qwe'
 DRIVER_NAME = 'CData ODBC Driver for Greenplum'
 
 # Путь до директории с excel файлами
-EXCELS_DIR = 'Excels/'
+EXCELS_DIR = r'Excels/'
 
 # Путь до директории с приложением
-LOG_PATH = 'app.log/'
+LOG_PATH = r'app.log/'

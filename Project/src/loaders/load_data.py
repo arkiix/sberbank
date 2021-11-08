@@ -40,14 +40,23 @@ def insert_data(transaction_df, connect):
     sq = f'''INSERT INTO stg_transactions
                 VALUES({values});'''
     cursor = connect.cursor()
+    sq_log = '''insert into frod_logs (log_stage)
+	            values ('Загрузка данных в stg_transactions');'''
 
     try:
+        cursor.execute(sq_log)
         cursor.executemany(sq, transaction_df.values.tolist())
     except Exception as error:
         print_log('При выполнении запроса возникла ошибка:', True)
         print_log(error, True)
         print_log('Запрос: ' + str(sq), True)
-        exit(-1)
+        if 'SQL state: 23505' in str(error):
+            print_log('Очистка временной таблицы...', True)
+            sq = 'TRUNCATE TABLE stg_transactions;'
+            cursor.execute(sq)
+            insert_data(transaction_df, connect)
+        else:
+            exit(-1)
 
     print_log('Загрузка транзакций завершена')
 

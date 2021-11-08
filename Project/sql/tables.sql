@@ -11,7 +11,12 @@ drop table meta_clients;
 drop table meta_terminals;
 drop table meta_transactions;
 drop table meta_report;
+drop table frod_logs;
 
+
+select *
+from report r 
+order by fraud_id
 
 create table dim_terminals_hist
 (
@@ -127,56 +132,77 @@ create table stg_transactions
 )
 distributed by (trans_id);
 
+
 create table meta_accounts
 (
 	id serial,
-	event varchar not null,
-	start_dt timestamp default now(),
+	rec_cnt int not null,
+	data_relevance timestamp default now(),
 	constraint pk_meta_accounts_id primary key (id)
 )
 distributed by (id);
 
+
 create table meta_cards
 (
 	id serial,
-	event varchar not null,
-	start_dt timestamp default now(),
+	rec_cnt int not null,
+	data_relevance timestamp default now(),
 	constraint pk_meta_cards_id primary key (id)
 )
 distributed by (id);
 
+
 create table meta_clients
 (
 	id serial,
-	event varchar not null,
-	start_dt timestamp default now(),
+	rec_cnt int not null,
+	data_relevance timestamp default now(),
 	constraint pk_meta_clients_id primary key (id)
 )
 distributed by (id);
 
+
 create table meta_terminals
 (
 	id serial,
-	event varchar not null,
-	start_dt timestamp default now(),
+	rec_cnt int not null,
+	data_relevance timestamp default now(),
 	constraint pk_meta_terminals_id primary key (id)
 )
 distributed by (id);
 
+
 create table meta_transactions
 (
 	id serial,
-	event varchar not null,
-	start_dt timestamp default now(),
+	rec_cnt int not null,
+	rec_avg decimal not null,
+	data_relevance timestamp default now(),
 	constraint pk_meta_transactions_id primary key (id)
 )
 distributed by (id);
 
+
 create table meta_report
 (
 	id serial,
-	event varchar not null,
-	start_dt timestamp default now(),
+	rec_cnt int not null,
+	data_relevance timestamp default now(),
 	constraint pk_meta_report_id primary key (id)
 )
 distributed by (id);
+
+
+create table frod_logs
+(
+	log_id serial,
+	log_stage varchar not null,
+	log_event varchar,
+	log_dt timestamp default now(),
+	constraint pk_logs_id primary key (log_id)
+)
+distributed by (log_id);
+
+select *
+from frod_logs fl 
