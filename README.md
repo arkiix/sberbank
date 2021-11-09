@@ -23,9 +23,9 @@
   Для работы программы необходимо установить [ODBC driver](https://www.cdata.com/drivers/greenplum/download/odbc/)
 
   #### Requirements
-    * python-daemon
-    * pyodbc
-    * pandas
+* python-daemon
+* pyodbc
+* pandas
     
   #### Linux specific Instructions
       git clone https://github.com/arkiix/sberbank/
