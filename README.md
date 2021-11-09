@@ -2,14 +2,14 @@
 
 Индивидуальный проект сбербанк.
 
-# Usage
+## Usage
 
-## Start daemon (for linux)
+### Start daemon (for linux)
 
     python3 start_daemon.py
 
 
-## Start main
+### Start main
 
     python3 main.py
 
