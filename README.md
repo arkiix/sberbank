@@ -22,11 +22,13 @@
 ### Python
   Для работы программы необходимо установить [ODBC driver](https://www.cdata.com/drivers/greenplum/download/odbc/)
 
-  #### Requirements
+
+  #### Requirements:
 * python-daemon
 * pyodbc
 * pandas
-    
+
+
   #### Linux specific Instructions
       git clone https://github.com/arkiix/sberbank/
       cd sberbank/Project/Python
