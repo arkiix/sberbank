@@ -48,7 +48,7 @@ def max_trans_id(connect):
         print_log('Ни одна транзакция ещё не загружена')
     else:
         trans_id = trans_id[0]
-        print_log('Номер последней транзакции: ', trans_id)
+        print_log('Номер последней транзакции: ' + str(trans_id))
     return trans_id
 
 

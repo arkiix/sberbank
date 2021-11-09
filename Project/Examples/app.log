@@ -1,0 +1,50 @@
+При выполнении запроса возникла ошибка:
+08-Nov-21 17:35:42 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 42601]: query has no destination for result data. Server\'s hint: If you want to discard the results of a SELECT, use PERFORM instead.\n\nPL/pgSQL function "distribution_of_records" line 5 at SQL statement\n (-1) (SQLExecDirectW)')
+08-Nov-21 17:35:42 - ('HY000', '[HY000] Server error [SQL state: 42601]: query has no destination for result data. Server\'s hint: If you want to discard the results of a SELECT, use PERFORM instead.\n\nPL/pgSQL function "distribution_of_records" line 5 at SQL statement\n (-1) (SQLExecDirectW)')
+Запрос: SELECT "distribution_of_records"()
+08-Nov-21 17:35:42 - Запрос: SELECT "distribution_of_records"()
+При выполнении запроса возникла ошибка:
+08-Nov-21 17:35:42 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 42703]: column "event" of relation "meta_report" does not exist\n\nPL/pgSQL function "build_report" line 21 at SQL statement (Character 26)\n (-1) (SQLExecDirectW)')
+08-Nov-21 17:35:42 - ('HY000', '[HY000] Server error [SQL state: 42703]: column "event" of relation "meta_report" does not exist\n\nPL/pgSQL function "build_report" line 21 at SQL statement (Character 26)\n (-1) (SQLExecDirectW)')
+Запрос: SELECT "build_report"()
+08-Nov-21 17:35:42 - Запрос: SELECT "build_report"()
+При выполнении запроса возникла ошибка:
+08-Nov-21 17:40:28 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 23505]: duplicate key value violates unique constraint "stg_transactions_pkey"  (seg0 gpdb-sandbox.localdomain:40000 pid=10045) Details: Key (trans_id)=(459270924) already exists.\n (-1) (SQLExecDirectW)')
+08-Nov-21 17:40:28 - ('HY000', '[HY000] Server error [SQL state: 23505]: duplicate key value violates unique constraint "stg_transactions_pkey"  (seg0 gpdb-sandbox.localdomain:40000 pid=10045) Details: Key (trans_id)=(459270924) already exists.\n (-1) (SQLExecDirectW)')
+Запрос: INSERT INTO stg_transactions
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+08-Nov-21 17:40:28 - Запрос: INSERT INTO stg_transactions
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+При выполнении запроса возникла ошибка:
+08-Nov-21 17:44:55 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 23505]: duplicate key value violates unique constraint "stg_transactions_pkey"  (seg0 gpdb-sandbox.localdomain:40000 pid=10503) Details: Key (trans_id)=(459270924) already exists.\n (-1) (SQLExecDirectW)')
+08-Nov-21 17:44:55 - ('HY000', '[HY000] Server error [SQL state: 23505]: duplicate key value violates unique constraint "stg_transactions_pkey"  (seg0 gpdb-sandbox.localdomain:40000 pid=10503) Details: Key (trans_id)=(459270924) already exists.\n (-1) (SQLExecDirectW)')
+Запрос: INSERT INTO stg_transactions
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+08-Nov-21 17:44:55 - Запрос: INSERT INTO stg_transactions
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+При выполнении запроса возникла ошибка:
+08-Nov-21 17:45:17 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 23505]: duplicate key value violates unique constraint "stg_transactions_pkey"  (seg0 gpdb-sandbox.localdomain:40000 pid=10643) Details: Key (trans_id)=(459270924) already exists.\n (-1) (SQLExecDirectW)')
+08-Nov-21 17:45:17 - ('HY000', '[HY000] Server error [SQL state: 23505]: duplicate key value violates unique constraint "stg_transactions_pkey"  (seg0 gpdb-sandbox.localdomain:40000 pid=10643) Details: Key (trans_id)=(459270924) already exists.\n (-1) (SQLExecDirectW)')
+Запрос: INSERT INTO stg_transactions
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+08-Nov-21 17:45:17 - Запрос: INSERT INTO stg_transactions
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+Очистка временной таблицы...
+08-Nov-21 17:45:17 - Очистка временной таблицы...
+При выполнении запроса возникла ошибка:
+08-Nov-21 17:52:35 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 42804]: column "log_event" is of type character varying but expression is of type record. Server\'s hint: You will need to rewrite or cast the expression.\n\nPL/pgSQL function "load_terminals" line 28 during exception cleanup\nSQL statement "SELECT  "load_terminals"()"\nPL/pgSQL function "distribution_of_records" line 5 at perform (Character 35)\n (-1) (SQLExecDirectW)')
+08-Nov-21 17:52:35 - ('HY000', '[HY000] Server error [SQL state: 42804]: column "log_event" is of type character varying but expression is of type record. Server\'s hint: You will need to rewrite or cast the expression.\n\nPL/pgSQL function "load_terminals" line 28 during exception cleanup\nSQL statement "SELECT  "load_terminals"()"\nPL/pgSQL function "distribution_of_records" line 5 at perform (Character 35)\n (-1) (SQLExecDirectW)')
+Запрос: SELECT "distribution_of_records"()
+08-Nov-21 17:52:35 - Запрос: SELECT "distribution_of_records"()
+При выполнении запроса возникла ошибка:
+08-Nov-21 20:06:11 - При выполнении запроса возникла ошибка:
+('HY000', '[HY000] Server error [SQL state: 23502]: null value in column "rec_avg" violates not-null constraint  (seg0 gpdb-sandbox.localdomain:40000 pid=6594)\n\nSQL statement "insert into meta_terminals (rec_cnt) select count(*) from dim_terminals_hist"\nPL/pgSQL function "load_terminals" line 26 at SQL statement\nSQL statement "SELECT  "load_terminals"()"\nPL/pgSQL function "distribution_of_records" line 5 at perform\n (-1) (SQLExecDirectW)')
+08-Nov-21 20:06:11 - ('HY000', '[HY000] Server error [SQL state: 23502]: null value in column "rec_avg" violates not-null constraint  (seg0 gpdb-sandbox.localdomain:40000 pid=6594)\n\nSQL statement "insert into meta_terminals (rec_cnt) select count(*) from dim_terminals_hist"\nPL/pgSQL function "load_terminals" line 26 at SQL statement\nSQL statement "SELECT  "load_terminals"()"\nPL/pgSQL function "distribution_of_records" line 5 at perform\n (-1) (SQLExecDirectW)')
+Запрос: SELECT "distribution_of_records"()
+08-Nov-21 20:06:11 - Запрос: SELECT "distribution_of_records"()

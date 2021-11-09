@@ -19,7 +19,7 @@ begin
     update dim_terminals_hist
     set end_dt = now(), is_active = false
     where id in (
-	    select t1.id
+	    select distinct t1.id
 	    from dim_terminals_hist t1
 	    join dim_terminals_hist t2 on t1.terminal_id = t2.terminal_id 
 	    where t1.id < t2.id
@@ -50,7 +50,7 @@ begin
 	
 	insert into dim_clients_hist (client_id, last_name, first_name, patronymic, 
 		date_of_birth, passport_num, passport_valid_to, phone)
-    select t1.client_id, t1.last_name, t1.first_name, t1.patronymic, 
+    select distinct t1.client_id, t1.last_name, t1.first_name, t1.patronymic, 
 		t1.date_of_birth, t1.passport_num, t1.passport_valid_to, t1.phone 
 	from stg_transactions t1
 	left join dim_clients_hist t2 on t1.client_id = t2.client_id
@@ -107,7 +107,7 @@ begin
    	update dim_cards_hist
     set end_dt = now(), is_active = false
     where id in (
-    	select t1.id
+    	select distinct t1.id
     	from dim_cards_hist t1
     	join dim_cards_hist t2 on t1.card_num = t2.card_num
     	where t1.id < t2.id
@@ -340,6 +340,15 @@ begin
     group by date_trunc('day', t2.trans_date), t1.client_id, t1.last_name, 
    		t1.first_name, t1.patronymic, t1.passport_num, t1.phone;
    
+   	
+   	insert into frod_logs (log_stage, log_event)
+	values ('Построение отчёта', 'Обновление meta_report');
+    
+   	insert into meta_report (rec_cnt)
+	select count(*)
+	from report;
+
+
    	insert into frod_logs (log_stage, log_event)
 	values ('Построение отчёта', 'Очистка stg_transactions');
    	truncate table stg_transactions;

@@ -14,10 +14,6 @@ drop table meta_report;
 drop table frod_logs;
 
 
-select *
-from report r 
-order by fraud_id
-
 create table dim_terminals_hist
 (
 	id serial,
@@ -50,6 +46,7 @@ create table dim_clients_hist
 	constraint pk_client_id_hist primary key (id) 
 )
 distributed by (id);
+
 
 create table dim_accounts_hist
 (
@@ -203,6 +200,3 @@ create table frod_logs
 	constraint pk_logs_id primary key (log_id)
 )
 distributed by (log_id);
-
-select *
-from frod_logs fl 
